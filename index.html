@@ -212,7 +212,6 @@ button.btn{cursor:pointer}
 .done-sub{margin:0;color:var(--ink-soft)}
 .linkish{background:none;border:0;color:var(--gold);font-family:var(--f-body);font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:6px}
 @media (prefers-reduced-motion:no-preference){ .wish-done:not([hidden]) svg{animation:beat 1.6s ease-in-out 2} }
-.copy-src{width:100%;min-height:150px;font-family:var(--f-body);font-size:.9rem;border:1px solid var(--line);border-radius:4px;padding:10px;background:#fff;color:var(--ink)}
 .card{transition:transform .3s ease;will-change:transform}
 
 /* confetti */
@@ -261,7 +260,7 @@ button.btn{cursor:pointer}
 
 <div class="intro" id="intro" dir="rtl" lang="ar" aria-hidden="true">
   <div class="sealwrap">
-    <div class="seal"><span>ع&nbsp;أ</span></div>
+    <div class="seal"><span>ع&nbsp;م</span></div>
     <p>دعوة خاصة لكم</p>
   </div>
 </div>
@@ -383,17 +382,6 @@ button.btn{cursor:pointer}
         <svg viewBox="0 0 24 24"><path d="M12 22s7-7.5 7-13a7 7 0 0 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
         افتح الموقع على الخريطة
       </a>
-      <button class="btn ghost" id="copy" type="button">
-        <svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h2"/></svg>
-        <span>انسخ نص الدعوة</span>
-      </button>
-      <textarea id="copy-src" class="copy-src" hidden readonly aria-label="نص الدعوة">بكل الحب يتشرف الحاج عمر محمد رباعي والحاج رائد صبحي جبر بدعوتكم لحضور جاهة وخطوبة
-عبدالكريم وأميرته 🤍
-📅 الجمعة 13/11/2026
-🕔 الساعة 5:00 مساءً
-📍 صالة كريستال
-https://maps.app.goo.gl/sVXhhFvWuT9PpccU7
-وحضوركم يكمل فرحتنا</textarea>
     </div>
 
     <section class="wish" style="--i:10" aria-labelledby="wish-title">
@@ -548,16 +536,6 @@ https://maps.app.goo.gl/sVXhhFvWuT9PpccU7
     card.addEventListener('pointerleave', function(){ card.style.transform=''; });
   }
 
-  /* copy invitation text for WhatsApp */
-  var copyBtn=document.getElementById('copy'), copySrc=document.getElementById('copy-src');
-  copyBtn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var txt=copySrc.value;
-    function done(){ copyBtn.querySelector('span').textContent='تم النسخ ✓'; setTimeout(function(){ copyBtn.querySelector('span').textContent='انسخ نص الدعوة'; },2200); }
-    function fallback(){ copySrc.hidden=false; copySrc.focus(); copySrc.select(); try{ document.execCommand('copy'); done(); }catch(err){} }
-    try{ navigator.clipboard.writeText(txt).then(done, fallback); }catch(err){ fallback(); }
-  });
-
   /* countdown */
   var target = Date.UTC(2026,10,13,14,0,0); // 5:00 PM (UTC+3)
   var ids = ['cd-d','cd-h','cd-m','cd-s'], last = {};
@@ -611,6 +589,7 @@ https://maps.app.goo.gl/sVXhhFvWuT9PpccU7
     if(wanted) startMusic();
   }
   ['pointerdown','touchend','keydown'].forEach(function(ev){ document.addEventListener(ev,onFirstTouch,true); });
+  startMusic(); // plays straight away where the browser allows it
   window.addEventListener('invite-open', function(){ if(wanted) startMusic(); });
   document.addEventListener('visibilitychange', function(){
     if(document.hidden && playing){ song.pause(); playing=false; setBtn(); }
