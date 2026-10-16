@@ -438,7 +438,7 @@ https://maps.app.goo.gl/sVXhhFvWuT9PpccU7
 
   /* intro: tap to skip, then remove */
   var intro = document.getElementById('intro');
-  function hideIntro(){ intro.classList.add('gone'); }
+  function hideIntro(){ if(intro.classList.contains('gone')) return; intro.classList.add('gone'); window.dispatchEvent(new Event('invite-open')); }
   intro.addEventListener('click', function(){
     intro.style.animation='introOut .35s ease forwards';
     setTimeout(hideIntro,380);
@@ -579,64 +579,42 @@ https://maps.app.goo.gl/sVXhhFvWuT9PpccU7
   }
   tick(); var t=setInterval(tick,1000);
 
-  /* calm, original Nahawand melody: soft qanun-like plucks, warm pad and a little reverb, made in the browser, starts on tap */
-  var btn=document.getElementById('music'), ac=null, playing=false, timer=null, master=null, wet=null, nextT=0, bar=0;
-  var D3=146.83,F3=174.61,G3=196,A3=220,Bb3=233.08,Cs4=277.18,D4=293.66,E4=329.63,F4=349.23,G4=392,A4=440,Bb4=466.16,C5=523.25,Cs5=554.37,D5=587.33;
-  var mel=[
-    [A4,0,0,F4, D5,0,A4,0],[Bb4,0,A4,G4, F4,0,0,0],[G4,0,Bb4,0, D5,0,C5,Bb4],[A4,0,0,G4, E4,0,0,0],
-    [F4,0,A4,0, D5,0,0,A4],[Bb4,0,A4,0, G4,0,Bb4,A4],[G4,0,F4,E4, Cs5,0,0,0],[D5,0,0,0, 0,0,0,0]];
-  var chords=[[D3,A3,D4,F4],[Bb3,D4,F4,Bb4],[G3,D4,G4,Bb4],[A3,Cs4,E4,A4],[D3,A3,D4,F4],[G3,D4,G4,Bb4],[A3,Cs4,E4,G4],[D3,A3,D4,F4]];
-  var e8=.44;
-  function pluck(f,t,vol,len){
-    var o=ac.createOscillator(), o2=ac.createOscillator(), lp=ac.createBiquadFilter(), g=ac.createGain();
-    o.type='triangle'; o.frequency.value=f; o2.type='sine'; o2.frequency.value=f*2;
-    lp.type='lowpass'; lp.frequency.setValueAtTime(3200,t); lp.frequency.exponentialRampToValueAtTime(700,t+len*.6);
-    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+.01); g.gain.exponentialRampToValueAtTime(.0004,t+len);
-    o.connect(lp); o2.connect(lp); lp.connect(g); g.connect(master); g.connect(wet);
-    o.start(t); o2.start(t); o.stop(t+len+.05); o2.stop(t+len+.05);
+  /* music: the couple's chosen track (music.mp3), loops softly; starts when the invitation opens */
+  var btn=document.getElementById('music'), playing=false, wanted=true, fadeT=null;
+  var song=new Audio('music.mp3'); song.loop=true; song.preload='auto'; song.volume=0;
+  function setBtn(){
+    btn.classList.toggle('on', playing);
+    btn.setAttribute('aria-pressed', playing);
+    btn.setAttribute('aria-label', playing?'إيقاف الموسيقى':'تشغيل الموسيقى');
   }
-  function warmPad(fs,t,len){
-    fs.slice(0,3).forEach(function(f){
-      var o=ac.createOscillator(), g=ac.createGain();
-      o.type='sine'; o.frequency.value=f; o.detune.value=(Math.random()*8-4);
-      g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.035,t+len*.35); g.gain.linearRampToValueAtTime(0,t+len+.4);
-      o.connect(g); g.connect(master); g.connect(wet); o.start(t); o.stop(t+len+.5);
-    });
+  function fadeTo(v,ms,done){
+    clearInterval(fadeT); var start=song.volume, t0=Date.now();
+    fadeT=setInterval(function(){
+      var k=Math.min(1,(Date.now()-t0)/ms); song.volume=Math.max(0,Math.min(1,start+(v-start)*k));
+      if(k>=1){ clearInterval(fadeT); if(done) done(); }
+    },50);
   }
-  function scheduleBar(t){
-    var b=bar%8, m=mel[b], c=chords[b];
-    warmPad(c,t,e8*8);
-    for(var k=0;k<8;k++){
-      var tt=t+k*e8;
-      if(m[k]) pluck(m[k],tt,.13,2.2);
-      if(k%2===0) pluck(c[[0,1,2,1][k/2]],tt+.02,.05,1.6); // gentle arpeggio
-    }
-    bar++;
+  function startMusic(){
+    if(playing) return Promise.resolve(true);
+    var pr; try{ pr=song.play(); }catch(err){ return Promise.resolve(false); }
+    return Promise.resolve(pr).then(function(){ playing=true; setBtn(); fadeTo(.8,2000); return true; }, function(){ return false; });
   }
-  function pump(){ while(nextT<ac.currentTime+1){ scheduleBar(nextT); nextT+=e8*8; } }
-  function setup(){
-    ac=new (window.AudioContext||window.webkitAudioContext)();
-    master=ac.createGain(); master.gain.value=.6; master.connect(ac.destination);
-    var rev=ac.createConvolver(), len=ac.sampleRate*2.6, ir=ac.createBuffer(2,len,ac.sampleRate);
-    for(var ch=0;ch<2;ch++){ var d=ir.getChannelData(ch); for(var i=0;i<len;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3); }
-    rev.buffer=ir; wet=ac.createGain(); wet.gain.value=.35; wet.connect(rev); rev.connect(master);
-  }
+  function stopMusic(){ if(!playing) return; playing=false; setBtn(); fadeTo(0,600,function(){ if(!playing) song.pause(); }); }
   btn.addEventListener('click', function(e){
     e.stopPropagation();
-    try{
-      if(!ac) setup();
-      if(!playing){
-        ac.resume(); master.gain.cancelScheduledValues(ac.currentTime); master.gain.setValueAtTime(.6,ac.currentTime);
-        nextT=ac.currentTime+.08; pump(); timer=setInterval(pump,250); playing=true;
-      } else {
-        clearInterval(timer); playing=false;
-        master.gain.setValueAtTime(master.gain.value,ac.currentTime); master.gain.linearRampToValueAtTime(0,ac.currentTime+.6);
-        setTimeout(function(){ if(!playing) ac.suspend(); },700);
-      }
-      btn.classList.toggle('on', playing);
-      btn.setAttribute('aria-pressed', playing);
-      btn.setAttribute('aria-label', playing?'إيقاف الموسيقى':'تشغيل الموسيقى');
-    }catch(err){}
+    if(playing){ wanted=false; stopMusic(); } else { wanted=true; startMusic(); }
+  });
+  // phones block sound until the guest touches the page, so: try when the card shows, else start on the first touch
+  function onFirstTouch(e){
+    if(e && e.target && e.target.closest && e.target.closest('#music')) return;
+    ['pointerdown','touchend','keydown'].forEach(function(ev){ document.removeEventListener(ev,onFirstTouch,true); });
+    if(wanted) startMusic();
+  }
+  ['pointerdown','touchend','keydown'].forEach(function(ev){ document.addEventListener(ev,onFirstTouch,true); });
+  window.addEventListener('invite-open', function(){ if(wanted) startMusic(); });
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden && playing){ song.pause(); playing=false; setBtn(); }
+    else if(!document.hidden && wanted && !playing && song.currentTime>0) startMusic();
   });
 
   /* tap anywhere: little hearts */
