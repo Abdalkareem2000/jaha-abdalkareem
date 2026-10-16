@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="جاهة وخطوبة عبدالكريم وأميرته">
+<meta property="og:image" content="https://abdalkareem2000.github.io/khutba/og.jpg">
+<meta property="og:url" content="https://abdalkareem2000.github.io/khutba/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="الجمعة 13/11/2026 · الساعة 5:00 مساءً · صالة كريستال">
+</head>
+<body>
+<title>جاهة عبدالكريم وأميرته</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: wax-seal intro that breaks open onto a blush watercolor card; petals drift; gold names shimmer; live countdown; map + calendar actions */
+:root{
+  --paper:#fbf8f6;
+  --blush:#f3d3d8;
+  --blush-deep:#e9b8c1;
+  --ink:#3b2a26;
+  --ink-soft:#7a6560;
+  --gold:#a8865a;
+  --gold-hi:#e2c79a;
+  --line:#e4d6d2;
+  --seal:#9c3b4a;
+  --f-display:"Aref Ruqaa","Amiri",serif;
+  --f-verse:"Amiri","Times New Roman",serif;
+  --f-body:"Tajawal","Segoe UI",Tahoma,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{
+  margin:0;color:var(--ink);font-family:var(--f-body);
+  padding-block:24px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:
+    radial-gradient(60% 40% at 15% 10%, var(--blush-deep) 0%, transparent 70%),
+    radial-gradient(50% 35% at 90% 85%, var(--blush-deep) 0%, transparent 70%),
+    var(--blush);
+  overflow-x:hidden;
+}
+#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+
+/* ---------- Seal intro ---------- */
+.intro{
+  position:fixed;inset:0;z-index:10;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 45%, var(--paper) 0%, var(--blush) 75%);
+  animation:introOut 1s ease 2.2s forwards;cursor:pointer;
+}
+.intro .sealwrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+.seal{
+  width:130px;height:130px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #c25a69, var(--seal) 55%, #6e2431);
+  box-shadow:0 10px 30px -8px rgba(110,36,49,.6), inset 0 -6px 14px rgba(0,0,0,.25), inset 0 6px 10px rgba(255,255,255,.18);
+  display:grid;place-items:center;position:relative;
+  animation:sealIn .9s cubic-bezier(.2,1.4,.4,1) both, sealBreak .7s ease 1.6s forwards;
+}
+.seal::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px dashed rgba(255,230,220,.45)}
+.seal span{font-family:var(--f-display);color:#fbe7dc;font-size:2.1rem;line-height:1;text-shadow:0 2px 2px rgba(0,0,0,.25)}
+.intro p{margin:0;font-family:var(--f-verse);color:var(--ink-soft);font-size:1.1rem;animation:fadeUp .8s ease .5s both}
+@keyframes sealIn{from{transform:scale(.3) rotate(-30deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes sealBreak{to{transform:scale(1.25);opacity:0;filter:blur(4px)}}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+.intro.gone{display:none}
+
+/* ---------- Card ---------- */
+.card{
+  position:relative;max-width:520px;margin:0 auto;background:var(--paper);
+  border-radius:4px;overflow:hidden;padding:76px 28px 44px;
+  box-shadow:0 20px 50px -20px rgba(120,60,70,.35);text-align:center;z-index:1;
+}
+.card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(45% 25% at 20% 8%, rgba(243,211,216,.75), transparent 70%),
+    radial-gradient(40% 22% at 85% 96%, rgba(243,211,216,.8), transparent 70%),
+    radial-gradient(30% 18% at 92% 45%, rgba(243,211,216,.35), transparent 70%);
+}
+.card::after{ /* thin gold frame */
+  content:"";position:absolute;inset:12px;border:1px solid rgba(168,134,90,.35);border-radius:2px;pointer-events:none;
+}
+.branch{position:absolute;width:190px;pointer-events:none;z-index:1}
+.branch.tl{top:-6px;left:-10px;transform-origin:0 0}
+.branch.br{bottom:-6px;right:-10px;transform-origin:100% 100%}
+.branch.br svg{transform:rotate(180deg)}
+.branch svg{width:100%;display:block}
+
+.content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:22px}
+
+.verse{font-family:var(--f-verse);font-size:1.25rem;line-height:1.9;margin:0}
+.lead{font-size:1.05rem;color:var(--ink-soft);margin:0}
+
+.pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px;width:100%}
+.pair .who{display:flex;flex-direction:column;gap:6px;min-width:0}
+.label{font-size:.95rem;color:var(--ink-soft)}
+.parent{font-family:var(--f-verse);font-weight:700;font-size:1.45rem;line-height:1.3;text-wrap:balance}
+.amp{font-family:var(--f-display);color:var(--gold);font-size:1.4rem;padding-bottom:4px}
+
+.invite{font-size:1.15rem;font-weight:500;margin:0}
+.invite b{color:var(--gold);font-weight:700}
+
+.ornament{width:150px;height:18px;color:var(--gold)}
+.ornament path{stroke:currentColor;fill:none;stroke-width:1.2;stroke-dasharray:200;stroke-dashoffset:0}
+
+.couple{align-items:center}
+.couple .name{
+  font-family:var(--f-display);font-weight:700;font-size:2.7rem;line-height:1.35;
+  background:linear-gradient(100deg, var(--ink) 0%, var(--ink) 38%, var(--gold-hi) 50%, var(--ink) 62%, var(--ink) 100%);
+  background-size:250% 100%;background-position:100% 0;
+  -webkit-background-clip:text;background-clip:text;color:var(--ink);
+}
+@supports (-webkit-background-clip:text) or (background-clip:text){ .couple .name{color:transparent} }
+.heart{display:flex;flex-direction:column;align-items:center;gap:2px}
+.heart svg{width:26px;height:26px;fill:var(--seal);opacity:.85}
+.heart .amp{font-size:1.8rem;padding:0}
+
+.inshallah{font-size:1.05rem;color:var(--ink-soft);margin:0}
+
+.details{display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-block:1px solid var(--line);padding-block:18px}
+.d{display:flex;flex-direction:column;align-items:center;gap:6px;padding-inline:6px;min-width:0}
+.d + .d{border-right:1px solid var(--line)}
+.d svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.d .k{font-size:.9rem;color:var(--ink-soft)}
+.d .v{font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums}
+
+.count-wrap{display:flex;flex-direction:column;gap:10px;align-items:center}
+.count-title{font-size:.9rem;color:var(--ink-soft);letter-spacing:.3px}
+.count{display:flex;gap:8px;justify-content:center}
+.count div{min-width:60px;padding:9px 6px 7px;border:1px solid var(--line);border-radius:4px;background:rgba(255,255,255,.7);overflow:hidden}
+.count b{display:block;font-size:1.4rem;font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.2}
+.count b.flip{animation:flip .45s ease}
+.count span{font-size:.75rem;color:var(--ink-soft)}
+@keyframes flip{0%{transform:translateY(-60%);opacity:.2}100%{transform:none;opacity:1}}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%}
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-family:var(--f-body);font-weight:700;font-size:1rem;
+  padding:12px 22px;border-radius:999px;border:1px solid var(--gold);
+  color:var(--paper);background:var(--gold);transition:transform .2s ease, box-shadow .2s ease;
+}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(168,134,90,.7)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.btn.shine::after{
+  content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+}
+
+.closing{font-family:var(--f-display);font-size:1.7rem;margin:6px 0 0;color:var(--ink)}
+.quran{font-family:var(--f-verse);font-size:1.15rem;line-height:2;color:var(--gold);margin:0;max-width:30ch;text-wrap:balance}
+.verse{font-size:1.1rem}
+.hijri{font-size:.78rem;color:var(--ink-soft)}
+.dua{font-family:var(--f-verse);font-size:1.05rem;color:var(--ink-soft);margin:0;text-wrap:balance}
+.tap-hint{font-size:.8rem;color:var(--ink-soft);opacity:.7;margin:0}
+
+/* music toggle */
+.music{
+  position:fixed;z-index:5;
+  bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  left:calc(16px + env(safe-area-inset-left,0px));
+  width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);
+  background:var(--paper);color:var(--gold);display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 6px 16px -6px rgba(120,60,70,.4);
+}
+.music svg{width:22px;height:22px;fill:currentColor}
+.music:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.music.on{background:var(--gold);color:var(--paper)}
+.music.on::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--gold);animation:ring 1.8s ease-out infinite}
+@keyframes ring{from{transform:scale(.9);opacity:.8}to{transform:scale(1.4);opacity:0}}
+
+button.btn{cursor:pointer}
+
+/* wishes box */
+.wish{width:100%;text-align:right;background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:6px;padding:22px 18px;display:flex;flex-direction:column;gap:6px}
+.wish h2{margin:0;text-align:center;font-family:var(--f-display);font-weight:700;font-size:1.6rem;color:var(--ink)}
+.wish-sub{margin:0 0 8px;text-align:center;font-size:.92rem;color:var(--ink-soft);text-wrap:balance}
+#wish-form{display:flex;flex-direction:column;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-size:.92rem;font-weight:700;color:var(--ink)}
+.req{color:var(--seal)}
+.field input,.field textarea{
+  width:100%;font-family:var(--f-body);font-size:1rem;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:11px 12px;resize:vertical;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.field input::placeholder,.field textarea::placeholder{color:#b3a19c}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(168,134,90,.18)}
+.field.bad input,.field.bad textarea{border-color:var(--seal);box-shadow:0 0 0 3px rgba(156,59,74,.12)}
+.err{font-size:.82rem;color:var(--seal)}
+.field-foot{display:flex;justify-content:space-between;gap:8px}
+.chars{font-size:.78rem;color:var(--ink-soft);font-variant-numeric:tabular-nums;margin-inline-start:auto}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn.send{align-self:center;padding-inline:28px}
+.btn.send[disabled]{opacity:.6;cursor:progress}
+.form-note{margin:0;text-align:center;font-size:.85rem;color:var(--ink-soft);min-height:1em}
+.form-note.bad{color:var(--seal)}
+.wish-done{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding-block:10px}
+.wish-done svg{width:40px;height:40px;fill:var(--seal)}
+.done-title{margin:0;font-family:var(--f-verse);font-size:1.3rem;font-weight:700}
+.done-sub{margin:0;color:var(--ink-soft)}
+.linkish{background:none;border:0;color:var(--gold);font-family:var(--f-body);font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:6px}
+@media (prefers-reduced-motion:no-preference){ .wish-done:not([hidden]) svg{animation:beat 1.6s ease-in-out 2} }
+.copy-src{width:100%;min-height:150px;font-family:var(--f-body);font-size:.9rem;border:1px solid var(--line);border-radius:4px;padding:10px;background:#fff;color:var(--ink)}
+.card{transition:transform .3s ease;will-change:transform}
+
+/* confetti */
+.conf{position:fixed;top:-12px;z-index:9;pointer-events:none;border-radius:2px;animation:confFall 2.8s cubic-bezier(.2,.6,.4,1) forwards}
+@keyframes confFall{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
+
+/* twinkles around the couple */
+.couple{position:relative}
+.tw{position:absolute;color:var(--gold-hi);font-size:14px;pointer-events:none;opacity:.9}
+@media (prefers-reduced-motion:no-preference){
+  .tw{animation:twinkle 2.4s ease-in-out infinite}
+}
+@keyframes twinkle{0%,100%{transform:scale(.4) rotate(0);opacity:.2}50%{transform:scale(1.1) rotate(45deg);opacity:1}}
+
+/* tap hearts */
+.pop{position:fixed;z-index:6;pointer-events:none;font-size:20px;color:var(--seal);animation:popUp 1.2s ease-out forwards}
+@keyframes popUp{0%{transform:translate(-50%,-50%) scale(.4);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% - 90px)) scale(1.1);opacity:0}}
+
+@media (max-width:420px){
+  .card{padding:68px 18px 38px}
+  .parent{font-size:1.2rem}
+  .couple .name{font-size:2.15rem}
+  .branch{width:145px}
+  .d .v{font-size:.92rem}
+  .count div{min-width:52px}
+}
+
+/* ---------- Motion (only when allowed) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .content > *{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(2.6s + var(--i,0) * .14s)}
+  .branch.tl{animation:sway 7s ease-in-out infinite}
+  .branch.br{animation:sway 8s ease-in-out -2s infinite reverse}
+  .couple .name{animation:shimmer 5s ease-in-out 3.6s infinite}
+  .heart svg{animation:beat 1.6s ease-in-out infinite}
+  .ornament path{stroke-dashoffset:200;animation:draw 1.6s ease forwards;animation-delay:inherit}
+  .btn.shine::after{animation:shine 3.5s ease-in-out 4s infinite}
+}
+@media (prefers-reduced-motion:reduce){ .intro{display:none} }
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(2.2deg)}}
+@keyframes shimmer{0%{background-position:100% 0}45%,100%{background-position:0 0}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes shine{0%{left:-60%}35%,100%{left:130%}}
+</style>
+
+<div class="intro" id="intro" dir="rtl" lang="ar" aria-hidden="true">
+  <div class="sealwrap">
+    <div class="seal"><span>ع&nbsp;أ</span></div>
+    <p>دعوة خاصة لكم</p>
+  </div>
+</div>
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<button class="music" id="music" type="button" aria-label="تشغيل الموسيقى" aria-pressed="false">
+  <svg viewBox="0 0 24 24"><path d="M9 17.5a2.5 2.5 0 1 1-2-2.45V5l11-2v11.5a2.5 2.5 0 1 1-2-2.45V6.1L9 7.4z"/></svg>
+</button>
+
+<main class="card" dir="rtl" lang="ar">
+  <div class="branch tl" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <g stroke="#b08a6a" stroke-width="1.4" fill="none" stroke-linecap="round">
+        <path d="M0 10 C60 40 110 80 170 150"/><path d="M40 30 C55 10 75 4 95 2"/>
+        <path d="M90 70 C110 55 135 50 160 52"/><path d="M120 105 C140 100 160 105 180 118"/>
+      </g>
+      <g fill="#c9a98a" opacity=".7">
+        <ellipse cx="70" cy="18" rx="10" ry="3" transform="rotate(-20 70 18)"/>
+        <ellipse cx="140" cy="54" rx="11" ry="3" transform="rotate(5 140 54)"/>
+        <ellipse cx="160" cy="112" rx="10" ry="3" transform="rotate(25 160 112)"/>
+      </g>
+      <g fill="#8fa48a" opacity=".85">
+        <ellipse cx="55" cy="45" rx="12" ry="5" transform="rotate(35 55 45)"/>
+        <ellipse cx="105" cy="92" rx="12" ry="5" transform="rotate(-25 105 92)"/>
+      </g>
+      <g fill="#fff" stroke="#eadfda" stroke-width="1">
+        <circle cx="22" cy="24" r="16"/><circle cx="36" cy="16" r="12"/><circle cx="30" cy="36" r="11"/>
+        <circle cx="80" cy="60" r="13"/><circle cx="92" cy="52" r="10"/>
+        <circle cx="132" cy="122" r="12"/><circle cx="144" cy="114" r="9"/>
+      </g>
+      <g fill="#d9c6b8"><circle cx="28" cy="26" r="2.5"/><circle cx="84" cy="58" r="2"/><circle cx="137" cy="119" r="2"/></g>
+    </svg>
+  </div>
+  <div class="branch br" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <g stroke="#b08a6a" stroke-width="1.4" fill="none" stroke-linecap="round">
+        <path d="M0 10 C60 40 110 80 170 150"/><path d="M40 30 C55 10 75 4 95 2"/><path d="M90 70 C110 55 135 50 160 52"/>
+      </g>
+      <g fill="#8fa48a" opacity=".85">
+        <ellipse cx="55" cy="45" rx="12" ry="5" transform="rotate(35 55 45)"/>
+        <ellipse cx="105" cy="92" rx="12" ry="5" transform="rotate(-25 105 92)"/>
+      </g>
+      <g fill="#fff" stroke="#eadfda" stroke-width="1">
+        <circle cx="22" cy="24" r="15"/><circle cx="36" cy="16" r="11"/><circle cx="30" cy="36" r="10"/>
+        <circle cx="80" cy="60" r="12"/><circle cx="92" cy="52" r="9"/>
+      </g>
+      <g fill="#d9c6b8"><circle cx="28" cy="26" r="2.5"/><circle cx="84" cy="58" r="2"/></g>
+    </svg>
+  </div>
+
+  <div class="content">
+    <p class="quran" style="--i:0">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾</p>
+    <p class="verse" style="--i:0">الحمد لله الذي بكرمه تؤلف قلوب العباد<br>وبفضله تُساق الأرزاق</p>
+
+    <p class="lead" style="--i:1">بقلوبٍ مليئةٍ بالحب يتشرف كلٌّ من</p>
+
+    <div class="pair" style="--i:2">
+      <div class="who"><span class="label">السيد</span><span class="parent">عمر محمد رباعي</span></div>
+      <span class="amp">و</span>
+      <div class="who"><span class="label">السيد</span><span class="parent">رائد صبحي جبر</span></div>
+    </div>
+
+    <p class="invite" style="--i:3">بدعوتكم لحضور <b>جاهة وخطوبة</b></p>
+
+    <svg class="ornament" style="--i:4" viewBox="0 0 150 18" aria-hidden="true">
+      <path d="M2 9 H58 M92 9 H148"/>
+      <path d="M75 2 C68 2 64 9 75 16 C86 9 82 2 75 2 Z"/>
+      <path d="M58 9 C64 4 68 6 70 9 M92 9 C86 4 82 6 80 9"/>
+    </svg>
+
+    <div class="pair couple" style="--i:5">
+      <div class="who"><span class="label">ابنهم</span><span class="name">عبدالكريم</span></div>
+      <div class="heart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.2 0 3.6 1.3 4.4 2.6.8-1.3 2.2-2.6 4.4-2.6 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+        <span class="amp">و</span>
+      </div>
+      <div class="who"><span class="label">ابنتهم</span><span class="name">أميرته</span></div>
+      <span class="tw" style="top:6%;right:4%;animation-delay:0s" aria-hidden="true">✦</span>
+      <span class="tw" style="top:70%;right:30%;animation-delay:.8s;font-size:10px" aria-hidden="true">✦</span>
+      <span class="tw" style="top:10%;left:8%;animation-delay:1.4s" aria-hidden="true">✦</span>
+      <span class="tw" style="bottom:0;left:34%;animation-delay:.4s;font-size:11px" aria-hidden="true">✦</span>
+      <span class="tw" style="top:40%;left:48%;animation-delay:1.9s;font-size:9px" aria-hidden="true">✦</span>
+    </div>
+
+    <p class="inshallah" style="--i:6">وذلك بمشيئة الله تعالى</p>
+
+    <div class="details" style="--i:7">
+      <div class="d">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <span class="k">الجمعة</span>
+        <span class="v" dir="ltr">13 / 11 / 2026</span>
+        <span class="hijri">3 جمادى الآخرة 1448 هـ</span>
+      </div>
+      <div class="d">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="k">الساعة</span>
+        <span class="v">5:00 مساءً</span>
+      </div>
+      <div class="d">
+        <svg viewBox="0 0 24 24"><path d="M12 22s7-7.5 7-13a7 7 0 0 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span class="k">الموقع</span>
+        <span class="v">صالة كريستال</span>
+      </div>
+    </div>
+
+    <div class="count-wrap" style="--i:8">
+      <span class="count-title">باقي على فرحتنا</span>
+      <div class="count" id="count">
+        <div><b id="cd-d">–</b><span>يوم</span></div>
+        <div><b id="cd-h">–</b><span>ساعة</span></div>
+        <div><b id="cd-m">–</b><span>دقيقة</span></div>
+        <div><b id="cd-s">–</b><span>ثانية</span></div>
+      </div>
+    </div>
+
+    <div class="actions" style="--i:9">
+      <a class="btn shine" href="https://maps.app.goo.gl/sVXhhFvWuT9PpccU7?g_st=ic" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 22s7-7.5 7-13a7 7 0 0 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        افتح الموقع على الخريطة
+      </a>
+      <button class="btn ghost" id="copy" type="button">
+        <svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h2"/></svg>
+        <span>انسخ نص الدعوة</span>
+      </button>
+      <textarea id="copy-src" class="copy-src" hidden readonly aria-label="نص الدعوة">بكل الحب يتشرف السيد عمر محمد رباعي والسيد رائد صبحي جبر بدعوتكم لحضور جاهة وخطوبة
+عبدالكريم وأميرته 🤍
+📅 الجمعة 13/11/2026
+🕔 الساعة 5:00 مساءً
+📍 صالة كريستال
+https://maps.app.goo.gl/sVXhhFvWuT9PpccU7
+وحضوركم يكمل فرحتنا</textarea>
+    </div>
+
+    <section class="wish" style="--i:10" aria-labelledby="wish-title">
+      <h2 id="wish-title">اكتبوا كلمة للعروسين</h2>
+      <p class="wish-sub">تهنئة، دعوة حلوة، أو ذكرى بتحبوا تشاركوها مع عبدالكريم وأميرته</p>
+      <form id="wish-form" novalidate>
+        <div class="field">
+          <label for="wish-name">الاسم <span class="req">*</span></label>
+          <input id="wish-name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="اسمك الكريم" required>
+          <span class="err" id="err-name" hidden>اكتب اسمك عشان العروسين يعرفوا مين بارك لهم</span>
+        </div>
+        <div class="field">
+          <label for="wish-msg">كلمتك <span class="req">*</span></label>
+          <textarea id="wish-msg" name="message" maxlength="500" rows="4" placeholder="ألف مبروك، الله يتمم عليكم بخير…" required></textarea>
+          <div class="field-foot"><span class="err" id="err-msg" hidden>اكتب كلمة قبل ما ترسل</span><span class="chars" id="wish-chars">0 / 500</span></div>
+        </div>
+        <input type="text" id="wish-hp" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <button class="btn send" id="wish-send" type="submit">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.2 0 3.6 1.3 4.4 2.6.8-1.3 2.2-2.6 4.4-2.6 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+          <span>أرسل التهنئة</span>
+        </button>
+        <p class="form-note" id="wish-note" role="status" aria-live="polite"></p>
+      </form>
+      <div class="wish-done" id="wish-done" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.2 0 3.6 1.3 4.4 2.6.8-1.3 2.2-2.6 4.4-2.6 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+        <p class="done-title">وصلت تهنئتك، شكراً <b id="done-name"></b></p>
+        <p class="done-sub">كلماتك رح توصل للعروسين 🤍</p>
+        <button type="button" class="linkish" id="wish-again">اكتب تهنئة ثانية</button>
+      </div>
+    </section>
+
+    <p class="closing" style="--i:11">وحضوركم يكمل فرحتنا</p>
+    <p class="dua" style="--i:12">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
+    <p class="tap-hint" style="--i:13">المس الشاشة 🤍</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var reduce = false;
+  try{ reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+
+  /* intro: tap to skip, then remove */
+  var intro = document.getElementById('intro');
+  function hideIntro(){ intro.classList.add('gone'); }
+  intro.addEventListener('click', function(){
+    intro.style.animation='introOut .35s ease forwards';
+    setTimeout(hideIntro,380);
+  });
+  setTimeout(hideIntro, 3400);
+
+  /* ---------- wishes box ---------- */
+  // Google Apps Script web-app URL (fill after deploying). Empty = preview mode.
+  var WISH_ENDPOINT = '';
+  var form=document.getElementById('wish-form'), nameEl=document.getElementById('wish-name'), msgEl=document.getElementById('wish-msg'),
+      hp=document.getElementById('wish-hp'), sendBtn=document.getElementById('wish-send'), note=document.getElementById('wish-note'),
+      chars=document.getElementById('wish-chars'), done=document.getElementById('wish-done');
+  try{ var saved=localStorage.getItem('wish-name'); if(saved) nameEl.value=saved; }catch(e){}
+
+  /* ---------- visit counter (anonymous device id + device type, no IP) ---------- */
+  var visitorId='', returning=false;
+  try{
+    visitorId=localStorage.getItem('vid')||'';
+    if(visitorId) returning=true;
+    else { visitorId='v'+Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4); localStorage.setItem('vid',visitorId); }
+  }catch(e){ visitorId='v-nostore-'+Math.random().toString(36).slice(2,8); }
+  function deviceInfo(){
+    var ua=navigator.userAgent||'', os='غير معروف', type='موبايل', app='';
+    if(/iPad/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1)){ os='iPad'; type='تابلت'; }
+    else if(/iPhone|iPod/.test(ua)) os='iPhone';
+    else if(/Android/.test(ua)){ os='Android'; if(!/Mobile/.test(ua)) type='تابلت'; }
+    else if(/Windows/.test(ua)){ os='Windows'; type='كمبيوتر'; }
+    else if(/Macintosh|Mac OS X/.test(ua)){ os='Mac'; type='كمبيوتر'; }
+    else if(/Linux/.test(ua)){ os='Linux'; type='كمبيوتر'; }
+    if(/FBAN|FBAV/.test(ua)) app='Facebook';
+    else if(/Instagram/.test(ua)) app='Instagram';
+    else if(/Snapchat/.test(ua)) app='Snapchat';
+    else if(/EdgA?\//.test(ua)) app='Edge';
+    else if(/SamsungBrowser/.test(ua)) app='Samsung Internet';
+    else if(/CriOS|Chrome\//.test(ua)) app='Chrome';
+    else if(/FxiOS|Firefox\//.test(ua)) app='Firefox';
+    else if(/Safari\//.test(ua)) app='Safari';
+    return {os:os, type:type, browser:app||'غير معروف'};
+  }
+  function post(obj){
+    if(!WISH_ENDPOINT) return Promise.resolve();
+    return fetch(WISH_ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(obj)});
+  }
+  var dev=deviceInfo();
+  setTimeout(function(){ post({type:'visit',visitorId:visitorId,returning:returning,os:dev.os,device:dev.type,browser:dev.browser,lang:navigator.language||''}).catch(function(){}); }, 800);
+  msgEl.addEventListener('input', function(){ chars.textContent=msgEl.value.length+' / 500'; mark(msgEl,'err-msg',false); });
+  nameEl.addEventListener('input', function(){ mark(nameEl,'err-name',false); });
+  function mark(el,errId,bad){ el.parentNode.classList.toggle('bad',bad); document.getElementById(errId).hidden=!bad; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name=nameEl.value.trim(), msg=msgEl.value.trim();
+    var nb=name.length<2, mb=msg.length<1;
+    mark(nameEl,'err-name',nb); mark(msgEl,'err-msg',mb);
+    if(nb){ nameEl.focus(); return; } if(mb){ msgEl.focus(); return; }
+    if(hp.value){ return; }
+    note.className='form-note'; note.textContent='';
+    if(!WISH_ENDPOINT){ note.textContent='صندوق التهاني بيشتغل بعد ما نربط الصفحة بالموقع النهائي.'; return; }
+    sendBtn.disabled=true; sendBtn.querySelector('span').textContent='عم نرسل…';
+    post({type:'wish',name:name,message:msg,website:hp.value,visitorId:visitorId,os:dev.os,device:dev.type})
+    .then(function(){
+      try{ localStorage.setItem('wish-name',name); }catch(e){}
+      document.getElementById('done-name').textContent=name;
+      form.hidden=true; done.hidden=false; msgEl.value=''; chars.textContent='0 / 500';
+      var r=done.getBoundingClientRect(); burst(r.left+r.width/2, r.top+30);
+    })
+    .catch(function(){
+      note.className='form-note bad'; note.textContent='ما وصلت الرسالة. تأكد من الإنترنت وجرّب كمان مرة.';
+    })
+    .then(function(){ sendBtn.disabled=false; sendBtn.querySelector('span').textContent='أرسل التهنئة'; });
+  });
+  document.getElementById('wish-again').addEventListener('click', function(){ done.hidden=true; form.hidden=false; msgEl.focus(); });
+  function burst(x,y){
+    for(var n=0;n<12;n++){
+      var s=document.createElement('span'); s.className='pop'; s.textContent=['❤','✿','❀','♡'][n%4];
+      s.style.left=x+'px'; s.style.top=y+'px'; s.style.setProperty('--dx',(Math.random()*160-80)+'px');
+      s.style.animationDelay=(n*50)+'ms'; s.style.fontSize=(14+Math.random()*14)+'px';
+      document.body.appendChild(s); setTimeout(function(z){return function(){z.remove();};}(s),1700);
+    }
+  }
+
+  /* gold confetti when the seal breaks */
+  function confetti(){
+    if(reduce) return;
+    var cols=['#a8865a','#e2c79a','#f6c9d1','#9c3b4a','#ffffff'];
+    for(var i=0;i<60;i++){
+      var p=document.createElement('i'); p.className='conf';
+      p.style.left=(50+(Math.random()*20-10))+'vw';
+      p.style.background=cols[i%cols.length];
+      p.style.setProperty('--x',(Math.random()*120-60)+'vw');
+      p.style.setProperty('--y',(60+Math.random()*50)+'vh');
+      p.style.setProperty('--r',(Math.random()*720-360)+'deg');
+      p.style.animationDelay=(Math.random()*.25)+'s';
+      p.style.width=(5+Math.random()*6)+'px'; p.style.height=(8+Math.random()*8)+'px';
+      document.body.appendChild(p);
+      setTimeout(function(x){return function(){x.remove();};}(p), 3200);
+    }
+  }
+  setTimeout(confetti, 2250);
+
+  /* gentle 3D tilt on desktop */
+  var card=document.querySelector('.card');
+  if(!reduce && window.matchMedia && window.matchMedia('(pointer:fine)').matches){
+    card.addEventListener('pointermove', function(e){
+      var r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform='perspective(1200px) rotateY('+(x*5)+'deg) rotateX('+(-y*4)+'deg)';
+    });
+    card.addEventListener('pointerleave', function(){ card.style.transform=''; });
+  }
+
+  /* copy invitation text for WhatsApp */
+  var copyBtn=document.getElementById('copy'), copySrc=document.getElementById('copy-src');
+  copyBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var txt=copySrc.value;
+    function done(){ copyBtn.querySelector('span').textContent='تم النسخ ✓'; setTimeout(function(){ copyBtn.querySelector('span').textContent='انسخ نص الدعوة'; },2200); }
+    function fallback(){ copySrc.hidden=false; copySrc.focus(); copySrc.select(); try{ document.execCommand('copy'); done(); }catch(err){} }
+    try{ navigator.clipboard.writeText(txt).then(done, fallback); }catch(err){ fallback(); }
+  });
+
+  /* countdown */
+  var target = Date.UTC(2026,10,13,14,0,0); // 5:00 PM (UTC+3)
+  var ids = ['cd-d','cd-h','cd-m','cd-s'], last = {};
+  function pad(n){return n<10?'0'+n:''+n}
+  function set(id,val){
+    var el=document.getElementById(id);
+    if(last[id]===val) return;
+    last[id]=val; el.textContent=val;
+    if(!reduce){ el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip'); }
+  }
+  function tick(){
+    var ms = target - Date.now();
+    if(ms <= 0){
+      document.getElementById('count').innerHTML='<div style="padding:10px 18px"><b style="font-size:1.15rem">اليوم يومنا 🤍</b></div>';
+      clearInterval(t); return;
+    }
+    var s=Math.floor(ms/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60);
+    set('cd-d', String(d)); set('cd-h', pad(h)); set('cd-m', pad(m)); set('cd-s', pad(s%60));
+  }
+  tick(); var t=setInterval(tick,1000);
+
+  /* festive zaffa: original Hijaz melody + darbuka maqsum rhythm, made in the browser, starts on tap */
+  var btn=document.getElementById('music'), ac=null, playing=false, timer=null, master=null, noiseBuf=null;
+  var D4=293.66,Eb=311.13,Fs=369.99,G4=392,A4=440,Bb=466.16,C5=523.25,D5=587.33;
+  var mel=[A4,A4,Bb,A4,G4,Fs,G4,0, Fs,G4,A4,Bb,A4,G4,Fs,Eb, D4,0,Fs,G4,A4,0,Bb,A4, G4,Fs,Eb,Fs,D4,0,0,0,
+           D5,0,C5,Bb,A4,Bb,C5,0, Bb,A4,G4,A4,Bb,A4,G4,Fs, G4,0,A4,Bb,A4,G4,Fs,Eb, Fs,G4,Fs,Eb,D4,0,0,0];
+  var drum='DT.TD.T.'; // maqsum
+  var e8=.27, step=0;
+  function oud(f,t){
+    var o=ac.createOscillator(), o2=ac.createOscillator(), lp=ac.createBiquadFilter(), g=ac.createGain();
+    o.type='sawtooth'; o.frequency.value=f; o2.type='triangle'; o2.frequency.value=f*2;
+    lp.type='lowpass'; lp.frequency.setValueAtTime(2600,t); lp.frequency.exponentialRampToValueAtTime(500,t+.35);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.12,t+.008); g.gain.exponentialRampToValueAtTime(.0005,t+.5);
+    o.connect(lp); o2.connect(lp); lp.connect(g); g.connect(master);
+    o.start(t); o2.start(t); o.stop(t+.55); o2.stop(t+.55);
+  }
+  function dum(t){
+    var o=ac.createOscillator(), g=ac.createGain();
+    o.type='sine'; o.frequency.setValueAtTime(130,t); o.frequency.exponentialRampToValueAtTime(48,t+.25);
+    g.gain.setValueAtTime(.55,t); g.gain.exponentialRampToValueAtTime(.001,t+.35);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t+.4);
+  }
+  function tak(t,vol,len,freq){
+    var s=ac.createBufferSource(), hp=ac.createBiquadFilter(), g=ac.createGain();
+    s.buffer=noiseBuf; hp.type='highpass'; hp.frequency.value=freq;
+    g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.001,t+len);
+    s.connect(hp); hp.connect(g); g.connect(master); s.start(t); s.stop(t+len+.02);
+  }
+  function schedule(){
+    var t=ac.currentTime+.05;
+    for(var k=0;k<8;k++){
+      var tt=t+k*e8, i=step%mel.length, d=drum[step%8];
+      if(mel[i]) oud(mel[i],tt);
+      if(d==='D') dum(tt); else if(d==='T') tak(tt,.35,.09,1800);
+      tak(tt,.05,.04,7000); // riq shimmer
+      step++;
+    }
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    try{
+      if(!ac){
+        ac=new (window.AudioContext||window.webkitAudioContext)(); master=ac.createGain(); master.gain.value=.7; master.connect(ac.destination);
+        noiseBuf=ac.createBuffer(1, ac.sampleRate*.3, ac.sampleRate);
+        var ch=noiseBuf.getChannelData(0); for(var q=0;q<ch.length;q++) ch[q]=Math.random()*2-1;
+      }
+      if(!playing){ ac.resume(); schedule(); timer=setInterval(schedule, e8*8*1000); playing=true; }
+      else { clearInterval(timer); playing=false; }
+      btn.classList.toggle('on', playing);
+      btn.setAttribute('aria-pressed', playing);
+      btn.setAttribute('aria-label', playing?'إيقاف الموسيقى':'تشغيل الموسيقى');
+    }catch(err){}
+  });
+
+  /* tap anywhere: little hearts */
+  var shapes=['❤','♡','✿','❀'];
+  document.addEventListener('pointerdown', function(e){
+    if(e.target.closest && (e.target.closest('a,button,#intro,input,textarea,label'))) return;
+    for(var n=0;n<5;n++){
+      var s=document.createElement('span'); s.className='pop';
+      s.textContent=shapes[Math.floor(Math.random()*shapes.length)];
+      s.style.left=e.clientX+'px'; s.style.top=e.clientY+'px';
+      s.style.setProperty('--dx',(Math.random()*80-40)+'px');
+      s.style.animationDelay=(n*60)+'ms';
+      s.style.fontSize=(14+Math.random()*12)+'px';
+      document.body.appendChild(s);
+      setTimeout(function(x){ return function(){ x.remove(); }; }(s), 1500);
+    }
+  });
+
+  /* falling petals */
+  if(reduce) return;
+  var c=document.getElementById('petals'), ctx=c.getContext('2d'), W, H, dpr=Math.min(window.devicePixelRatio||1,2);
+  function resize(){ W=c.clientWidth; H=c.clientHeight; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  resize(); window.addEventListener('resize',resize);
+  var colors=['#f6c9d1','#f9dfe3','#ffffff','#efd9c4'];
+  var N = W<500 ? 16 : 26, P=[];
+  function make(top){
+    return {x:Math.random()*W, y: top? -20-Math.random()*H : Math.random()*H,
+      r:5+Math.random()*6, vy:.35+Math.random()*.6, vx:-.2+Math.random()*.4,
+      a:Math.random()*6.28, va:-.02+Math.random()*.04, sw:Math.random()*6.28,
+      col:colors[Math.floor(Math.random()*colors.length)]};
+  }
+  for(var i=0;i<N;i++) P.push(make(true));
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var p=P[i]; p.sw+=.02; p.y+=p.vy; p.x+=p.vx+Math.sin(p.sw)*.4; p.a+=p.va;
+      if(p.y>H+20){ P[i]=make(true); continue; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a);
+      ctx.globalAlpha=.8; ctx.fillStyle=p.col;
+      ctx.beginPath(); ctx.moveTo(0,-p.r);
+      ctx.bezierCurveTo(p.r*.9,-p.r*.6,p.r*.7,p.r*.7,0,p.r);
+      ctx.bezierCurveTo(-p.r*.7,p.r*.7,-p.r*.9,-p.r*.6,0,-p.r);
+      ctx.fill(); ctx.restore();
+    }
+    requestAnimationFrame(draw);
+  }
+  setTimeout(function(){ requestAnimationFrame(draw); }, 2200);
+})();
+</script>
+
+</body>
+</html>
